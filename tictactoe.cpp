@@ -5,22 +5,10 @@ using namespace std;
 
 void draw(char* Ptr[3][3]); 
 void clear(char* Ptr[3][3]);
+bool checktie(char* Ptr[3][3]); 
+int Xwins = 0; 
+int Owins = 0; 
 
-/*
-void PrintBoard::print()
-{
-  int** board = new int*[3];
-  cout << "\t1\t2\t3";
-  for (int row = 0; row < 3; row++)
-    {
-      cout << 'a' + row << "\t" << endl;
-      for (int column = 0; column < 3; column++)
-	{
-	  cout << "\t";
-	}
-    }
-}
-*/
 int main ()
 {
   char board[3][3];
@@ -80,5 +68,18 @@ void clear (char* Ptr[3][3])
 	  *Ptr[x][y] = ' '; 
 	}
     }
-
+}
+  bool checktie (char* Ptr[3][3])
+  {
+    for (int x = 0; x < 3; x++)
+      {
+	for (int y = 0; y < 3; y++)
+	  {
+	    if( *Ptr[x][y] == ' ')
+	      {
+		return false;
+	      }
+	  }
+      }
+    return true; 
 }
