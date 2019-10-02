@@ -16,6 +16,7 @@ int main ()
   char pos[2]; 
   char playx = 'X';
   char playo = 'O';
+  bool playing = true; 
 
   for (int x = 0; x < 3; x++)
     {
@@ -28,6 +29,22 @@ int main ()
 
   cout << "Welcome to TicTacToe, this is a two player game. Please take turns inputting a position" << endl; 
   
+  while (playing == true)
+    {
+      cout << "Please enter a character followed by a number to place your character" <<endl;
+      cin.get(pos, 3);
+      
+      while ((pos[0] == 'a' || pos[0] == 'b' || pos[0] == 'c') || 
+	     (pos[1] == '1' || pos[1] == '2' || pos[1] == '3') ||
+	     !(board[(int)pos[1] - 'a'][(int)pos[0] - '1'] == ' '))
+	{
+	  playing = true; 
+	  board[(int)pos[1] - 'a'][(int)pos[0] -'1'] = playx; 
+	  draw(boardPtr); 
+	}
+      
+    }
+
   clear(boardPtr);
   draw(boardPtr);
 
