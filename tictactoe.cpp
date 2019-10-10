@@ -13,9 +13,7 @@ void draw(char* Ptr);
 void clear(char* Ptr);
 bool checktie(char* Ptr);
 bool checkwin(char* Ptr, bool player);  
-
-int Xwins = 0; 
-int Owins = 0; 
+ 
 
 int main ()
 {
@@ -25,6 +23,8 @@ int main ()
   char pos[2]; 
   char playx = 'X';
   char playo = 'O';
+  int Xwins = 0;
+  int Owins = 0;
   //Condition to continue playing
   bool playing = true; 
 
